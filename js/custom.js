@@ -44,7 +44,7 @@ function sendEmail() {
       message: message,
   };
 
-  emailjs.send("service_191k70p", "template_o8u7a9v", templateParams)
+  emailjs.send("service_191k70p", "template_78w5vnf", templateParams)
       .then((response) => {
           console.log("E-posta başarıyla gönderildi!", response);
           alert("E-posta başarıyla gönderildi!");
