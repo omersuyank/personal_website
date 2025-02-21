@@ -25,21 +25,24 @@
     target: '#sideNav'
   });
 
-})(jQuery); // End of use strict
+})
+(jQuery); // End of use strict
 function sendEmail() {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
   const subject = document.getElementById("subject").value;
   const message = document.getElementById("message").value;
 
-  if (!name || !email || !subject || !message) {
+  if (!name || !email || !phone || !subject || !message) {
       alert("Lütfen tüm alanları doldurun!");
       return;
   }
 
   const templateParams = {
-      from_name: name,
-      from_email: email,
+      name: name,
+      email: email,
+      phone: phone,
       subject: subject,
       message: message,
   };
@@ -50,6 +53,7 @@ function sendEmail() {
           alert("E-posta başarıyla gönderildi!");
           document.getElementById("name").value = "";
           document.getElementById("email").value = "";
+          document.getElementById("phone").value = "";
           document.getElementById("subject").value = "";
           document.getElementById("message").value = "";
       })
@@ -58,6 +62,5 @@ function sendEmail() {
           alert("E-posta gönderme başarısız: " + error.text);
       });
 }
-
 
 
